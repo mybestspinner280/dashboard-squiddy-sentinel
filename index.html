@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="header">
+        <h1>Squiddy Sentinel</h1>
+        <div class="live-indicator">
+          <div class="pulse"></div>
+          <span>Live Monitoring</span>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card" data-category="services">
+          <h3>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6" y2="6"></line>
+              <line x1="6" y1="18" x2="6" y2="18"></line>
+            </svg>
+            Servizi Attivi
+          </h3>
+          <div class="value">12</div>
+          <div class="trend up">+2 nelle ultime 24h</div>
+        </div>
+
+        <div class="stat-card" data-category="uptime">
+          <h3>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+              ></path>
+            </svg>
+            Uptime
+          </h3>
+          <div class="value">99.99<span class="unit">%</span></div>
+          <div class="trend stable">Stabile</div>
+        </div>
+
+        <div class="stat-card" data-category="response">
+          <h3>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+              ></path>
+            </svg>
+            Tempo di Risposta
+          </h3>
+          <div class="value">134<span class="unit">ms</span></div>
+          <div class="trend down">-12ms rispetto a ieri</div>
+        </div>
+
+        <div class="stat-card" data-category="incidents">
+          <h3>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+              ></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12" y2="17"></line>
+            </svg>
+            Incidenti Attivi
+          </h3>
+          <div class="value">1</div>
+          <div class="trend warning">1 critico</div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="performanceChart"></canvas>
+      </div>
+
+      <div class="services-grid">
+        <!-- I servizi verranno inseriti qui dinamicamente via JavaScript -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
